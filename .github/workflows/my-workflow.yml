@@ -20,6 +20,7 @@ jobs:
 
       - name: create-issue
         uses: ./.github/actions/issue-maker
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          repo-token: ${{secrets.GITHUB_TOKEN}}
           joke: ${{steps.jokes.outputs.joke-output}}
